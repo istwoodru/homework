@@ -3,8 +3,8 @@ print("My dictionary:",my_dict)
 print("Existing value:",my_dict["Леонид"])
 print("Not existing value:",my_dict.get("Александр"))
 my_dict.update({"Владимир" : 1983,"Геннадий" : 1988})
-print("Deleted value:",my_dict["Геннадий"])
-del my_dict["Геннадий"]
+a = my_dict.pop("Геннадий")
+print("Deleted value:",a)
 print("Modified dictionary:", my_dict)
 my_set = {2,2,True,'War',True,'War'}
 print("My set:", my_set)
