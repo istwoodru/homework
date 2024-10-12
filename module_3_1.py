@@ -5,7 +5,7 @@ def count_calls(*args):
 def string_info(string):
     my_tuple = (len(string), string.upper(), string.lower())
     global count_calls
-    count_calls(1)
+    count_calls()
     return my_tuple
 
 def is_contains(string, list_to_search):
@@ -14,7 +14,7 @@ def is_contains(string, list_to_search):
     flag = False
     if string_lower in list_to_search1:
         flag = True
-    count_calls(1)
+    count_calls()
     return flag
 print(string_info('Capybara'))
 print(string_info('Armageddon'))
