@@ -24,9 +24,16 @@ class House:
         return self.number_of_floors >= other.number_of_floors
     def __ne__(self, other):
         return self.number_of_floors != other.number_of_floors
-    def __add__(self,other):
-        if isinstance(other, int):
-            return self.number_of_floors + other
+    def __add__(self, other):
+         self.number_of_floors = self.number_of_floors + other
+         return self
+    def __iadd__(self, other):
+        self.number_of_floors = self.number_of_floors + other
+        return self
+    def __radd__(self, other):
+        self.number_of_floors = self.number_of_floors + other
+        return self
+
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
 
@@ -39,11 +46,11 @@ h1 = h1 + 10 # __add__
 print(h1)
 print(h1 == h2)
 
-#h1 += 10 # __iadd__
-#print(h1)
+h1 += 10 # __iadd__
+print(h1)
 
-#h2 = 10 + h2 # __radd__
-#print(h2)
+h2 = 10 + h2 # __radd__
+print(h2)
 
 print(h1 > h2) # __gt__
 print(h1 >= h2) # __ge__
